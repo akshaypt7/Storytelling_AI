@@ -3,6 +3,7 @@
 ## Create a service account for deployment
 
 -Go to GCP Console, search for "Service accounts" from the top search box. or go to: "IAM & Admins" > "Service accounts" from the top-left menu and create a new service account called "deployment"
+
 -Give the following roles:
 -For deployment:
 -Compute Admin
