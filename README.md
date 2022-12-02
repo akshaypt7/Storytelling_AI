@@ -41,3 +41,20 @@
 -On the right "Actions" column click the vertical ... and select "Create key". A prompt for Create private key for "gcp-service" will appear select "JSON" and click create. This will download a Private key json file to your computer. Copy this json file into the secrets folder.
 
 -Rename the json key file to gcp-service.json
+
+### SSH Setup
+
+Configuring OS Login for service account
+
+gcloud compute project-info add-metadata --project <YOUR GCP_PROJECT> --metadata enable-oslogin=TRUE
+  
+  
+### Create SSH key for service account
+
+cd /secrets
+ssh-keygen -f ssh-key-deployment
+cd /app
+  
+  
+### Providing public SSH keys to instances
+  gcloud compute os-login ssh-keys add --key-file=/secrets/ssh-key-deployment.pub
